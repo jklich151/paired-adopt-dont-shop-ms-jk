@@ -1,0 +1,16 @@
+<%= form_tag("/shelters/#{@shelter_id}/pets",  method: :post) do %>
+  <h1>New Pet info</h1>
+  <p>Link to Image: </p>
+  <%= text_field_tag 'image', nil, :required => true %><br/>
+  <p>Name: </p>
+  <%= text_field_tag 'name', nil, :required => true %><br/>
+  <p>Description: </p>
+  <%= text_field_tag 'description', nil, :required => true %><br/>
+  <p>Age: </p>
+  <%= text_field_tag 'age', nil, :required => true %><br/>
+  <p>Sex: </p>
+  <%= text_field_tag 'sex', nil, :required => true %><br/>
+  <p>Status: </p>
+  <%= text_field_tag 'status', nil, :required => true %><br/>
+  <input type="submit" value="Create Pet">
+<% end %>

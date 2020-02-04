@@ -1,0 +1,9 @@
+<%= form_tag("/pets/#{@pet.id}", method: :patch) do %>
+  <h1>Edit</h1>
+  <%= text_field_tag 'image', @pet.image, :required => true %><br/>
+  <%= text_field_tag 'name', @pet.name, :required => true %><br/>
+  <%= text_field_tag 'description', @pet.description, :required => true %><br/>
+  <%= text_field_tag 'age', @pet.age, :required => true %><br/>
+  <%= text_field_tag 'sex', @pet.sex, :required => true %><br/>
+  <%= submit_tag(value = "Save changes") %>
+<% end %>

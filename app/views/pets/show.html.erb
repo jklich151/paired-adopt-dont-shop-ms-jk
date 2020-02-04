@@ -1,0 +1,14 @@
+<h1>Name: <%=@pet.name%></h1>
+<h3>Pet ID: <%= @pet.id %></h3>
+
+<%=image_tag("#{@pet.image}")%>
+<p>Description: <%=@pet.description%></p>
+<p>Age: <%=@pet.age%></p>
+<p>Sex: <%=@pet.sex%></p>
+<p>Status: <%=@pet.status%></p>
+
+<%=link_to "Update Pet", "/pets/#{@pet.id}/edit"%><br>
+
+<%= form_tag "/pets/#{@pet.id}", method: :delete do %>
+  <%= submit_tag(value="Delete Pet") %>
+<% end %>

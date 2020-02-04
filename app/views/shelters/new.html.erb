@@ -1,0 +1,14 @@
+<%=form_tag("/shelters",  method: :post) do%>
+  <h1>New Shelter info</h1>
+  <p>Name: </p>
+  <%=text_field_tag 'name', nil, :required => true%><br/>
+  <p>Address: </p>
+  <%=text_field_tag 'address', nil, :required => true%><br/>
+  <p>City: </p>
+  <%=text_field_tag 'city', nil, :required => true%><br/>
+  <p>State: </p>
+  <%=text_field_tag 'state', nil, :required => true%><br/>
+  <p>Zipcode: </p>
+  <%=text_field_tag 'zip', nil, :required => true%><br/>
+  <input type="submit" value="Create Shelter">
+<%end%>

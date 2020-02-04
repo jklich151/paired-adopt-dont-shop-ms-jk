@@ -1,0 +1,16 @@
+<h1>All Shelters</h1>
+
+<%@shelters.each do |shelter|%>
+<section id="shelter-<%=shelter.id%>">
+  <h3><%=link_to "#{shelter.name}", "/shelters/#{shelter.id}"%></h3>
+  <h5><%=link_to "Update Shelter", "/shelters/#{shelter.id}/edit"%></h5>
+
+  <%=form_tag "/shelters/#{shelter.id}", method: :delete do%>
+    <%=submit_tag(value="Delete Shelter")%>
+  <%end%>
+  <br>
+  <br>
+</section>
+<%end%>
+
+<h4><%=link_to "New Shelter", "/shelters/new"%> </h4>

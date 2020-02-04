@@ -1,0 +1,14 @@
+<h1>Shelter ID: <%=@shelter.id%></h1>
+
+<h2>Shelter: <%=@shelter.name%></h2>
+<h2>Address: <%=@shelter.address%></h2>
+<h2>City: <%=@shelter.city%></h2>
+<h2>State: <%=@shelter.state%></h2>
+<h2>Zipcode: <%=@shelter.zip%></h2>
+
+<%=link_to "Update Shelter", "/shelters/#{@shelter.id}/edit"%>
+<%=link_to "Pets", "/shelters/#{@shelter.id}/pets"%>
+
+<%=form_tag "/shelters/#{@shelter.id}", method: :delete do%>
+  <%=submit_tag(value="Delete")%>
+<%end%>

@@ -1,0 +1,9 @@
+<%=form_tag("/shelters/#{@shelter.id}", method: :patch) do%>
+  <h1>Edit</h1>
+  <%=text_field_tag 'name', @shelter.name, :required => true%><br/>
+  <%=text_field_tag 'address', @shelter.address, :required => true%><br/>
+  <%=text_field_tag 'city', @shelter.city, :required => true%><br/>
+  <%=text_field_tag 'state', @shelter.state, :required => true%><br/>
+  <%=text_field_tag 'zip', @shelter.zip, :required => true%><br/>
+  <%=submit_tag(value = "Save changes")%>
+<%end%>
