@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/environment.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/application.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/application.rb": {
         "lines": [
           1,
           null,
@@ -45,14 +45,14 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/boot.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/environments/test.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -98,7 +98,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/application_controller_renderer.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -110,7 +110,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/assets.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -128,7 +128,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/backtrace_silencers.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -139,7 +139,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/cookies_serializer.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -148,7 +148,7 @@
           1
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/filter_parameter_logging.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -156,7 +156,7 @@
           1
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/inflections.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -176,7 +176,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/mime_types.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -184,7 +184,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/initializers/wrap_parameters.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -202,7 +202,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/config/routes.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -223,287 +223,25 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/helpers/application_helper.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/helpers/welcome_helper.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/pets/pets_show_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/shelters/shelters_index_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/shelters/shelters_pets_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/features/pets/pets_show_spec.rb": {
         "lines": [
           1,
           null,
@@ -534,6 +272,344 @@
           null,
           null,
           null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/features/reviews/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/features/shelters/shelters_index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/features/shelters/shelters_pets_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           1,
@@ -609,7 +685,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/shelters/shelters_show_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/features/shelters/shelters_show_spec.rb": {
         "lines": [
           1,
           null,
@@ -695,7 +771,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/features/welcome/welcome_index_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/features/welcome/welcome_index_spec.rb": {
         "lines": [
           1,
           null,
@@ -715,7 +791,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/helpers/welcome_helper_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -734,7 +810,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/models/pet_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/models/pet_spec.rb": {
         "lines": [
           1,
           null,
@@ -758,7 +834,7 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/pet.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/models/pet.rb": {
         "lines": [
           1,
           1,
@@ -766,14 +842,14 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/application_record.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/spec/models/shelter_spec.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/models/review_spec.rb": {
         "lines": [
           1,
           null,
@@ -782,21 +858,15 @@
           2,
           2,
           2,
-          2,
-          2,
           null,
           null,
           1,
           2,
           null,
-          null,
-          null,
-          null,
-          null,
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/models/shelter.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/models/review.rb": {
         "lines": [
           1,
           1,
@@ -804,7 +874,40 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/pets_controller.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/spec/models/shelter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/models/shelter.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/controllers/pets_controller.rb": {
         "lines": [
           1,
           null,
@@ -873,14 +976,14 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/application_controller.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/shelters_controller.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/controllers/shelters_controller.rb": {
         "lines": [
           1,
           null,
@@ -906,7 +1009,7 @@
           null,
           null,
           1,
-          7,
+          11,
           null,
           null,
           1,
@@ -934,7 +1037,33 @@
           null
         ]
       },
-      "/Users/meghanstovall/turing/2module/projects/adopt_dont_shop/app/controllers/welcome_controller.rb": {
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/controllers/reviews_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanstovall/turing/2module/projects/paired-adopt-dont-shop-ms-jk/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -943,6 +1072,6 @@
         ]
       }
     },
-    "timestamp": 1580674637
+    "timestamp": 1580943582
   }
 }

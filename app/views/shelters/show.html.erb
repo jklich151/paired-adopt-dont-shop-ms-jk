@@ -12,3 +12,13 @@
 <%=form_tag "/shelters/#{@shelter.id}", method: :delete do%>
   <%=submit_tag(value="Delete")%>
 <%end%>
+
+<% @shelter.reviews.each do |review| %>
+  <h2>Review: <%=review.title%></h2>
+  <p>Rating: <%=review.rating%></p>
+  <p>Comment: <%=review.content%></p>
+
+  <img src="<%=review.picture%>" alt="No photos"
+<%end%>
+
+<%=link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%>
