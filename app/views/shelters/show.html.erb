@@ -14,11 +14,15 @@
 <%end%>
 
 <% @shelter.reviews.each do |review| %>
+<section id="review-<%=review.id%>">
   <h2>Review: <%=review.title%></h2>
   <p>Rating: <%=review.rating%></p>
   <p>Comment: <%=review.content%></p>
 
-  <img src="<%=review.picture%>" alt="No photos"
+  <img src="<%=review.picture%>" alt="No photos"><br>
+
+  <%=link_to "Delete Review", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete%>
+</section>
 <%end%>
 
 <%=link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%>
