@@ -8,7 +8,13 @@ class ReviewsController < ApplicationController
     review = Review.create(review_params)
     review.save
 
+    if review.save
     redirect_to "/shelters/#{review.shelter_id}"
+    else
+      flash[:notice] = "Review not created: Required information missing."
+
+      redirect_to "/shelters/#{review.shelter_id}/reviews/new"
+    end
   end
 
   def edit
@@ -18,7 +24,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:review_id])
-    
+
     if @review.update(review_params)
       redirect_to "/shelters/#{@review.shelter_id}"
     else

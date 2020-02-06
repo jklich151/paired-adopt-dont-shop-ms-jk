@@ -23,8 +23,10 @@
     <p>Comment: <%=review.content%></p>
     <img src="<%=review.picture%>" alt="No photos"</img><br>
     <%=link_to "Update Review", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit"%>
+    <%=link_to "Delete Review", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete%>
   </section>
 <%end%>
+
 <%=link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%>
 <br>
 <br>

@@ -68,4 +68,48 @@ RSpec.describe "shelters show page", type: :feature do
     expect(page).to have_content("Comment: #{new_review.content}")
     expect(page).to have_css("img[src*='#{new_review.picture}']")
   end
+
+  it 'can not create an review without a name' do
+    shelter_2 = Shelter.create(name: "Meg's Shelter",
+                               address: '150 Main Street',
+                               city: 'Hershey',
+                               state: 'PA',
+                               zip: '17033')
+​
+    visit "/shelters/#{shelter_2.id}/reviews/new"
+​
+    click_on "Add Review"
+​
+    expect(page).to have_content("Review not created: Required information missing.")
+    expect(page).to have_button('Add Review')
+  end
+​
+  it "can click link next to a review to delete the review" do
+    shelter_1 = Shelter.create(name: "Mike's Shelter",
+                               address: '1331 17th Street',
+                               city: 'Denver',
+                               state: 'CO',
+                               zip: '80202')
+    shelter_2 = Shelter.create(name: "Meg's Shelter",
+                               address: '150 Main Street',
+                               city: 'Hershey',
+                               state: 'PA',
+                               zip: '17033')
+    review_1 = shelter_1.reviews.create(title: "Review for Mike's",
+                                       rating: 4,
+                                       content: "This shelter was great, and very helpful. They sent us home with a bag of free food!",
+                                       picture: "https://image.shutterstock.com/image-photo/bowl-dry-kibble-dog-food-600w-416636413.jpg")
+    review_2 = shelter_2.reviews.create(title: "Review for Meg's",
+                                        rating: 5,
+                                        content: "Love this Shelter")
+​
+    visit "/shelters/#{shelter_2.id}"
+​
+    within("#review-#{review_2.id}") do
+      click_link "Delete Review"
+    end
+​
+    expect(current_path).to eq("/shelters/#{shelter_2.id}")
+    expect(page).to_not have_content(review_2.title)
+  end
 end
