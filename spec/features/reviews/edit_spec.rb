@@ -36,8 +36,10 @@ RSpec.describe "shelters show page", type: :feature do
       fill_in 'content', with: 'Love this Shelter. I highly recommend this shelter over any!'
 
       click_on "Save changes"
+
       expect(current_path).to eq("/shelters/#{shelter_2.id}")
-      expect(page).to have_content("Review: Wonderful")
+      expect(page).to have_content("Reviews")
+      expect(page).to have_content("Title: Wonderful")
       expect(page).to have_content("Comment: Love this Shelter. I highly recommend this shelter over any!")
     end
   end
@@ -64,9 +66,9 @@ RSpec.describe "shelters show page", type: :feature do
     expect(current_path).to eq "/shelters/#{shelter_2.id}/reviews/#{review_2.id}/edit"
 
     fill_in 'rating', with: 4
-    fill_in 'content', with: "Highly recommend"
-
+    fill_in 'content', with: ""
     click_on "Save changes"
+
     expect(current_path).to eq("/shelters/#{shelter_2.id}/reviews/#{review_2.id}/edit")
     expect(page).to have_content("You have not filled in one of these required fields: Title, Rating, Content")
   end

@@ -12,15 +12,19 @@
 <%=form_tag "/shelters/#{@shelter.id}", method: :delete do%>
   <%=submit_tag(value="Delete")%>
 <%end%>
+<br>
+<br>
 
+<h2>Reviews</h2>
 <% @shelter.reviews.each do |review| %>
   <section id="review-<%=review.id%>">
-    <h2>Review: <%=review.title%></h2>
+    <p>Title: <%=review.title%></p>
     <p>Rating: <%=review.rating%></p>
     <p>Comment: <%=review.content%></p>
-    <img src="<%=review.picture%>" alt="No photos"
-    <h3><%=link_to "Update Review", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit"%></h3>
+    <img src="<%=review.picture%>" alt="No photos"</img><br>
+    <%=link_to "Update Review", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit"%>
   </section>
 <%end%>
-
 <%=link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%>
+<br>
+<br>

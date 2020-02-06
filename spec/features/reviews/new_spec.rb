@@ -24,14 +24,16 @@ RSpec.describe "shelters show page", type: :feature do
 
       visit "/shelters/#{shelter_1.id}"
 
-      expect(page).to have_content("Review: #{review_1.title}")
+      expect(page).to have_content("Reviews")
+      expect(page).to have_content("Title: #{review_1.title}")
       expect(page).to have_content("Rating: #{review_1.rating}")
       expect(page).to have_content("Comment: #{review_1.content}")
       expect(page).to have_css("img[src*='#{review_1.picture}']")
 
       visit "/shelters/#{shelter_2.id}"
 
-      expect(page).to have_content("Review: #{review_2.title}")
+      expect(page).to have_content("Reviews")
+      expect(page).to have_content("Title: #{review_2.title}")
       expect(page).to have_content("Rating: #{review_2.rating}")
       expect(page).to have_content("Comment: #{review_2.content}")
       expect(page).to have_css("img[src*='#{review_2.picture}']")
@@ -60,7 +62,8 @@ RSpec.describe "shelters show page", type: :feature do
 
     expect(current_path).to eq "/shelters/#{shelter_2.id}"
 
-    expect(page).to have_content("Review: #{new_review.title}")
+    expect(page).to have_content("Reviews")
+    expect(page).to have_content("Title: #{new_review.title}")
     expect(page).to have_content("Rating: #{new_review.rating}")
     expect(page).to have_content("Comment: #{new_review.content}")
     expect(page).to have_css("img[src*='#{new_review.picture}']")
