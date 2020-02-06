@@ -8,6 +8,13 @@
 <p>Status: <%=@pet.status%></p>
 
 <%=link_to "Update Pet", "/pets/#{@pet.id}/edit"%><br>
+<% if !favorite.contents.include?(@pet.id) %>
+  <%= button_to "Add To Favorites", "/favorites/#{@pet.id}", method: :patch%><br>
+<% else %>
+  <%=form_tag "/favorites/#{@pet.id}", method: :delete do %>
+    <%= submit_tag(value="Remove From Favorites") %>
+  <% end %>
+<% end %>
 
 <%= form_tag "/pets/#{@pet.id}", method: :delete do %>
   <%= submit_tag(value="Delete Pet") %>

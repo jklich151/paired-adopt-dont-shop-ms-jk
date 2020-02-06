@@ -1,0 +1,5 @@
+<%@pets.each do |pet| %>
+  <%= image_tag("#{pet.image}", size: "300") %>
+    <h2>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}"%></h2>
+
+<%end %>
