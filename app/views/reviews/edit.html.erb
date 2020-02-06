@@ -1,0 +1,8 @@
+<%= form_tag("/shelters/#{@shelter_id}/reviews/#{@review.id}", method: :patch) do %>
+  <h1>Edit</h1>
+  <%= text_field_tag 'title', @review.title, :required => true %><br/>
+  <%= text_field_tag 'rating', @review.rating, :required => true %><br/>
+  <%= text_field_tag 'content', @review.content, :required => true %><br/>
+  <%= text_field_tag 'picture', @review.picture %><br/>
+  <%= submit_tag(value = "Save changes") %>
+<% end %>

@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   delete '/pets/:id', to: 'pets#destroy';
 
   get '/shelters/:shelter_id/reviews/new', to: 'reviews#new';
-  post '/shelters/:shelter_id', to: 'reviews#create'
+  post '/shelters/:shelter_id', to: 'reviews#create';
+  get '/shelters/:shelter_id/reviews/:review_id/edit', to: 'reviews#edit';
+  patch 'shelters/:shelter_id/reviews/:review_id', to: 'reviews#update';
 end
