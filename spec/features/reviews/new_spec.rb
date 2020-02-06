@@ -24,14 +24,16 @@ RSpec.describe "shelters show page", type: :feature do
 
       visit "/shelters/#{shelter_1.id}"
 
-      expect(page).to have_content("Review: #{review_1.title}")
+      expect(page).to have_content("Reviews")
+      expect(page).to have_content("Title: #{review_1.title}")
       expect(page).to have_content("Rating: #{review_1.rating}")
       expect(page).to have_content("Comment: #{review_1.content}")
       expect(page).to have_css("img[src*='#{review_1.picture}']")
 
       visit "/shelters/#{shelter_2.id}"
 
-      expect(page).to have_content("Review: #{review_2.title}")
+      expect(page).to have_content("Reviews")
+      expect(page).to have_content("Title: #{review_2.title}")
       expect(page).to have_content("Rating: #{review_2.rating}")
       expect(page).to have_content("Comment: #{review_2.content}")
       expect(page).to have_css("img[src*='#{review_2.picture}']")
@@ -60,7 +62,8 @@ RSpec.describe "shelters show page", type: :feature do
 
     expect(current_path).to eq "/shelters/#{shelter_2.id}"
 
-    expect(page).to have_content("Review: #{new_review.title}")
+    expect(page).to have_content("Reviews")
+    expect(page).to have_content("Title: #{new_review.title}")
     expect(page).to have_content("Rating: #{new_review.rating}")
     expect(page).to have_content("Comment: #{new_review.content}")
     expect(page).to have_css("img[src*='#{new_review.picture}']")
@@ -72,15 +75,15 @@ RSpec.describe "shelters show page", type: :feature do
                                city: 'Hershey',
                                state: 'PA',
                                zip: '17033')
-
+​
     visit "/shelters/#{shelter_2.id}/reviews/new"
-
+​
     click_on "Add Review"
-
+​
     expect(page).to have_content("Review not created: Required information missing.")
     expect(page).to have_button('Add Review')
   end
-
+​
   it "can click link next to a review to delete the review" do
     shelter_1 = Shelter.create(name: "Mike's Shelter",
                                address: '1331 17th Street',
@@ -99,13 +102,13 @@ RSpec.describe "shelters show page", type: :feature do
     review_2 = shelter_2.reviews.create(title: "Review for Meg's",
                                         rating: 5,
                                         content: "Love this Shelter")
-
+​
     visit "/shelters/#{shelter_2.id}"
-
+​
     within("#review-#{review_2.id}") do
       click_link "Delete Review"
     end
-
+​
     expect(current_path).to eq("/shelters/#{shelter_2.id}")
     expect(page).to_not have_content(review_2.title)
   end

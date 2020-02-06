@@ -1,33 +1,40 @@
 class ReviewsController < ApplicationController
 
-  def index
-    @reviews = Review.all
-  end
-
   def new
-    @shelter = Shelter.find(params[:shelter_id])
+    @shelter_id = params[:shelter_id]
   end
 
   def create
-    shelter = Shelter.find(params[:shelter_id])
-    review = shelter.reviews.create(review_params)
+    review = Review.create(review_params)
+    review.save
+
     if review.save
-    redirect_to "/shelters/#{shelter.id}"
+    redirect_to "/shelters/#{review.shelter_id}"
     else
       flash[:notice] = "Review not created: Required information missing."
 
-      redirect_to "/shelters/#{shelter.id}/reviews/new"
+      redirect_to "/shelters/#{review.shelter_id}/reviews/new"
     end
   end
 
-  def destroy
-    shelter = Shelter.find(params[:shelter_id])
-    Review.destroy(params[:id])
-    redirect_to "/shelters/#{shelter.id}"
+  def edit
+    @review = Review.find(params[:review_id])
+    @shelter_id = params[:shelter_id]
+  end
+
+  def update
+    @review = Review.find(params[:review_id])
+
+    if @review.update(review_params)
+      redirect_to "/shelters/#{@review.shelter_id}"
+    else
+      flash[:notice] = "You have not filled in one of these required fields: Title, Rating, Content"
+      redirect_to "/shelters/#{@review.shelter_id}/reviews/#{@review.id}/edit"
+    end
   end
 
   private
     def review_params
-      params.permit(:title, :rating, :content, :picture)
+      params.permit(:title, :rating, :content, :picture, :shelter_id)
     end
 end
