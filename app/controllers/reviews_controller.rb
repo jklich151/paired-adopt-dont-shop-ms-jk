@@ -24,7 +24,12 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:review_id])
     @review.update(review_params)
 
-    redirect_to "/shelters/#{@review.shelter.id}"
+    if @review.save
+      redirect_to "/shelters/#{@review.shelter.id}"
+    else
+      flash[:notice] = "You have not filled in one of these required fields: Title, Rating, Content"
+      redirect_to "/shelters/#{@review.shelter.id}/reviews/#{@review.id}/edit"
+    end
   end
 
   private
