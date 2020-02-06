@@ -12,6 +12,11 @@
     <h4><%=link_to "Home", "/"%></h4>
     <h4><%=link_to "Pet Index", "/pets"%></h4>
     <h4><%=link_to "Shelter Index", "/shelters"%></h4>
+
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
+
     <%=yield%>
   </body>
 </html>
