@@ -81,7 +81,7 @@ RSpec.describe "favorites index page" do
                                city: 'Denver',
                                state: 'CO',
                                zip: '80202')
-    pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+    pet_1 = shelter_1.pets.create(image: "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg?w=1155&h=1541",
                                   name: "Ozzie",
                                   age: "6",
                                   sex: "Male",
@@ -94,13 +94,21 @@ RSpec.describe "favorites index page" do
                                   description: "good dog",
                                   status: "pending")
 
+    visit "/pets/#{pet_1.id}"
+
+    click_button "Add To Favorites"
+
+    visit "/pets/#{pet_2.id}"
+
+    click_button "Add To Favorites"
+
     visit "/favorites"
 
     within "#pet-#{pet_1.id}" do
       click_button "Remove From Favorites"
     end
     expect(current_path).to eq("/favorites")
-    expect(page).to_not have_content(pet_1.name)
+    expect(page).to_not have_css("img[src*='#{pet_1.image}']")
     expect(page).to have_content(pet_2.name)
     expect(page).to have_content("Favorites: 1")
   end

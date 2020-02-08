@@ -45,7 +45,7 @@ RSpec.describe "pets index page", method: :feature do
                                  city: 'Hershey',
                                  state: 'PA',
                                  zip: '17033')
-      pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+      pet_1 = shelter_1.pets.create(image: "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg?w=1155&h=1541",
                         name: "Ozzie",
                         age: "6",
                         sex: "Male",
