@@ -10,7 +10,7 @@
 
   <body>
     <%=link_to "Home", "/"%> <%=link_to "Pet Index", "/pets"%> <%=link_to "Shelter Index", "/shelters"%>
-    <%=link_to "Favorites:", "/favorites"%> <%= favorite.total_count %>
+    <%=link_to "Favorites: #{favorite.total_count}", "/favorites"%>
 
     <% flash.each do |type, message| %>
       <p><h1> <%= message %> </h1></p>

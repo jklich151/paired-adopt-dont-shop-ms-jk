@@ -12,4 +12,10 @@ class Favorite
   def add_pet(pet_id)
     @contents << pet_id
   end
+
+  def include_pet?(pet_id)
+    @contents.any? do |content|
+      content == pet_id.to_i
+    end
+  end
 end
