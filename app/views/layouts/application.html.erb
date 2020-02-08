@@ -9,9 +9,8 @@
   </head>
 
   <body>
-    <h4><%=link_to "Home", "/"%></h4>
-    <h4><%=link_to "Pet Index", "/pets"%></h4>
-    <h4><%=link_to "Shelter Index", "/shelters"%></h4>
+    <%=link_to "Home", "/"%> <%=link_to "Pet Index", "/pets"%> <%=link_to "Shelter Index", "/shelters"%>
+    <%=link_to "Favorites: #{favorite.total_count}", "/favorites"%>
 
     <% flash.each do |type, message| %>
       <p><h1> <%= message %> </h1></p>
