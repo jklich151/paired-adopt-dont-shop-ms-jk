@@ -108,7 +108,7 @@ RSpec.describe "shelters show page", type: :feature do
     within("#review-#{review_2.id}") do
       click_link "Delete Review"
     end
-    
+
     expect(current_path).to eq("/shelters/#{shelter_2.id}")
     expect(page).to_not have_content(review_2.title)
   end

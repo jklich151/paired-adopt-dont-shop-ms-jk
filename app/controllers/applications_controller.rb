@@ -14,9 +14,11 @@ class ApplicationsController < ApplicationController
       pets.each do |pet|
         session[:favorites].delete(pet.id)
       end
+      redirect_to '/favorites'
+    else
+      flash[:notice] = "Form not submitted: Required information missing."
+      redirect_to "/applications/new"
     end
-
-    redirect_to '/favorites'
   end
 
   private
