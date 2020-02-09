@@ -112,4 +112,17 @@ RSpec.describe "favorites index page" do
     expect(page).to have_content(pet_2.name)
     expect(page).to have_content("Favorites: 1")
   end
+
+  it "can see a message that favorites is empty when no favorites have been added." do
+
+    visit "/favorites"
+
+    expect(page).to have_content("You have no pets in your favorites.")
+    expect(page).to have_content("Favorites: 0")
+  end
 end
+
+# As a visitor
+# When I have not added any pets to my favorites list
+# And I visit my favorites page ("/favorites")
+# I see text saying that I have no favorited pets
