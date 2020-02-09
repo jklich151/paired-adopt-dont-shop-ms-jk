@@ -1,5 +1,5 @@
 <% if @pets == nil %>
-  <p> "You have no pets in your favorites" </p>
+<p> "You have no pets in your favorites." </p>
 <% else %>
   <% @pets.each do |pet| %>
   <section id= "pet-<%= pet.id %>">
