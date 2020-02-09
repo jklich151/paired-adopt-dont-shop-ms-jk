@@ -5,12 +5,12 @@ class FavoritesController < ApplicationController
     favorite.add_pet(pet.id)
     session[:favorites] = favorite.contents
     flash[:notice] = "You now have added #{pet.name} to your favorites."
-    
+
     redirect_to "/pets/#{pet.id}"
   end
 
   def index
-    if session[:favorites].empty?
+    if session[:favorites] == nil || session[:favorites].empty? 
       @pets = nil
     else
       @pets = Pet.find(session[:favorites])
