@@ -1,0 +1,15 @@
+<h1>Your Application</h1>
+
+<%= @application.name %><br>
+<%= @application.address %><br>
+<%= @application.city %><br>
+<%= @application.state %><br>
+<%= @application.zip %><br>
+<%= @application.phone_number %><br>
+<%= @application.description %><br>
+
+
+<h1>Pets: </h1>
+<% @application.pets.each do |pet| %>
+  <%= pet.name %><br>
+<% end %>
