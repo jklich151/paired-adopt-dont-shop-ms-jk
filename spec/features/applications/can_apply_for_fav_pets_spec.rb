@@ -48,7 +48,6 @@ RSpec.describe "favorites index page" do
     click_button "Submit Application"
     expect(current_path).to eq("/favorites")
     expect(page).to have_content("Your application has been submitted!")
-    expect(page).to_not have_content(pet_1.name)
   end
 
   it "can't submit adoption form unless all fields are filled out" do

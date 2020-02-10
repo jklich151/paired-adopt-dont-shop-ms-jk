@@ -7,7 +7,6 @@ class ApplicationsController < ApplicationController
   def create
     application = Application.create(app_params)
     application.save
-    flash[:notice] = "Your application has been submitted!"
 
     if params[:adopt_pets] == nil || !application.save
       flash[:notice] = "Form not submitted: Required information missing."
@@ -15,8 +14,10 @@ class ApplicationsController < ApplicationController
     else
       pets = Pet.find(params[:adopt_pets])
       pets.each do |pet|
+        ApplicationPet.create(application: application, pet: pet)
         session[:favorites].delete(pet.id)
       end
+      flash[:notice] = "Your application has been submitted!"
       redirect_to '/favorites'
     end
   end
