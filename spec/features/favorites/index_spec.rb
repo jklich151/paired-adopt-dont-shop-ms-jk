@@ -25,6 +25,7 @@ RSpec.describe "favorites index page" do
                         sex: "Male",
                         description: "sassy",
                         status: "available")
+
     visit "/pets/#{pet_1.id}"
     click_button "Add To Favorites"
 
@@ -38,7 +39,6 @@ RSpec.describe "favorites index page" do
     expect(page).to_not have_content("Odell")
 
     click_link "Favorites:"
-
     expect(current_path).to eq("/favorites")
   end
 
@@ -56,7 +56,6 @@ RSpec.describe "favorites index page" do
                                   status: "adoptable")
 
     visit "/pets/#{pet_1.id}"
-
     click_button "Add To Favorites"
 
     expect(page).to_not have_button("Add To Favorites")
@@ -92,11 +91,9 @@ RSpec.describe "favorites index page" do
                                   status: "pending")
 
     visit "/pets/#{pet_1.id}"
-
     click_button "Add To Favorites"
 
     visit "/pets/#{pet_2.id}"
-
     click_button "Add To Favorites"
 
     visit "/favorites"

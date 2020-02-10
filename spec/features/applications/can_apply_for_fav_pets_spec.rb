@@ -51,7 +51,7 @@ RSpec.describe "favorites index page" do
     expect(page).to_not have_content(pet_1.name)
   end
 
-  it "cant submit adoption form unless all fields are filled out" do
+  it "can't submit adoption form unless all fields are filled out" do
     shelter_1 = Shelter.create(name: "Mike's Shelter",
                                address: '1331 17th Street',
                                city: 'Denver',
@@ -81,6 +81,17 @@ RSpec.describe "favorites index page" do
     fill_in 'description', with: ""
 
     click_button "Submit Application"
+    expect(current_path).to eq("/applications/new")
+    expect(page).to have_content("Form not submitted: Required information missing.")
+
+    fill_in 'name', with: "Bob"
+    fill_in 'address', with: "4567 Larimer"
+    fill_in 'city', with: "Denver"
+    fill_in 'zip', with: "80202"
+    fill_in 'phone_number', with: "7204706332"
+    fill_in 'description', with: "Love this dog."
+    click_button "Submit Application"
+
     expect(current_path).to eq("/applications/new")
     expect(page).to have_content("Form not submitted: Required information missing.")
   end
