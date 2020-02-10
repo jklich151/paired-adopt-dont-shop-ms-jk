@@ -16,7 +16,38 @@ RSpec.describe Pet, type: :model do
     it {should have_many(:applications).through(:application_pets)}
   end
 
-  # describe "methods" do
-  #   it
-  # end
+  describe "#with_applications" do
+    it "can return array of pets that have been applied for" do
+      shelter_1 = Shelter.create(name: "Mike's Shelter",
+                                 address: '1331 17th Street',
+                                 city: 'Denver',
+                                 state: 'CO',
+                                 zip: '80202')
+      pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                    name: "Ozzie",
+                                    age: "6",
+                                    sex: "Male",
+                                    description: "playful",
+                                    status: "adoptable")
+      pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                    name: "Harley",
+                                    age: "2",
+                                    sex: "Male",
+                                    description: "good dog",
+                                    status: "pending")
+      application = Application.create(name: "Meg",
+                                      address: "1234 Turing Lane",
+                                      city: "Denver",
+                                      state: "CO",
+                                      zip: "80202",
+                                      phone_number: "7204706332",
+                                      description: "I want this dog")
+
+      application_pet = pet_1.application_pets.create!(application: application, pet: pet_1)
+
+      pets = Pet.all
+
+      expect(pets.with_applications).to eq([pet_1])
+    end
+  end
 end

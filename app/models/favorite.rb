@@ -18,4 +18,10 @@ class Favorite
       content == pet_id.to_i
     end
   end
+
+  def pets
+    @contents.map do |id|
+      Pet.find(id)
+    end
+  end
 end

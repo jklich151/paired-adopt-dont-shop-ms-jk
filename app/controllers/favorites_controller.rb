@@ -10,10 +10,10 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    if session[:favorites] == nil || session[:favorites].empty? 
+    if session[:favorites] == nil || session[:favorites].empty?
       @pets = nil
     else
-      @pets = Pet.find(session[:favorites])
+      @pets = Pet.all
     end
   end
 

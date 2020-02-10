@@ -3,4 +3,8 @@ class Pet < ApplicationRecord
   belongs_to :shelter
   has_many :application_pets
   has_many :applications, through: :application_pets
+
+  def self.with_applications
+    Pet.joins(:application_pets)
+  end
 end
