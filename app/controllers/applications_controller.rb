@@ -22,6 +22,10 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def show
+    @application = Application.find(params[:id])
+  end
+
   private
     def app_params
       params.permit(:name, :address, :city, :state, :zip, :phone_number, :description)
