@@ -110,6 +110,12 @@ RSpec.describe "shelters index page", method: :feature do
                                  city: 'Hershey',
                                  state: 'PA',
                                  zip: '17033')
+      pet_1 = shelter_1.pets.create(image: "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg?w=1155&h=1541",
+                                  name: "Ozzie",
+                                  age: "6",
+                                  sex: "Male",
+                                  description: "playful",
+                                 status: "adoptable")
 
       visit "/shelters"
 
@@ -117,6 +123,53 @@ RSpec.describe "shelters index page", method: :feature do
         click_on "Delete Shelter"
       end
       expect(current_path).to eq("/shelters")
+    end
+  end
+
+  it "cannot be deleted with current approved applicatons" do
+    shelter_1 = Shelter.create(name: "Mike's Shelter",
+                               address: '1331 17th Street',
+                               city: 'Denver',
+                               state: 'CO',
+                               zip: '80202')
+    pet_1 = shelter_1.pets.create(image: "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg?w=1155&h=1541",
+                                 name: "Ozzie",
+                                 age: "6",
+                                 sex: "Male",
+                                 description: "playful",
+                                status: "adoptable")
+    pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                                 name: "Harley",
+                                 age: "2",
+                                 sex: "Male",
+                                 description: "good dog",
+                                 status: "pending")
+    visit '/shelters'
+
+    within "#shelter-#{shelter_1.id}" do
+      expect(page).to_not have_button("Delete Shelter")
+    end
+
+    visit "/shelters/#{shelter_1.id}"
+
+    expect(page).to_not have_button("Delete")
+  end
+
+  it "can delete all reviews when shelter is deleted" do
+    shelter_1 = Shelter.create(name: "Mike's Shelter",
+                               address: '1331 17th Street',
+                               city: 'Denver',
+                               state: 'CO',
+                               zip: '80202')
+    review_1 = shelter_1.reviews.create(title: "Review for Mike's",
+                                       rating: 4,
+                                       content: "This shelter was great, and very helpful. They sent us home with a bag of free food!",
+                                       picture: "https://image.shutterstock.com/image-photo/bowl-dry-kibble-dog-food-600w-416636413.jpg")
+
+    visit "/shelters"
+
+    within "#shelter-#{shelter_1.id}" do
+      expect { click_button "Delete Shelter" }.to change(Shelter && Review, :count).by(-1)
     end
   end
 end

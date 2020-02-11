@@ -5,9 +5,11 @@
   <h3><%=link_to "#{shelter.name}", "/shelters/#{shelter.id}"%></h3>
   <h5><%=link_to "Update Shelter", "/shelters/#{shelter.id}/edit"%></h5>
 
+  <% if shelter.pets.with_approved_apps.empty? %>
   <%=form_tag "/shelters/#{shelter.id}", method: :delete do%>
     <%=submit_tag(value="Delete Shelter")%>
   <%end%>
+  <% end %>
   <br>
   <br>
 </section>
