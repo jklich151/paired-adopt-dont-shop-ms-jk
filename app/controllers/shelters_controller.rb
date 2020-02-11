@@ -5,6 +5,7 @@ class SheltersController < ApplicationController
   end
 
   def new
+
   end
 
   def create
@@ -17,8 +18,12 @@ class SheltersController < ApplicationController
       })
 
     shelter.save
-
-    redirect_to '/shelters'
+    if !shelter.save
+      flash[:notice] = shelter.errors.full_messages.to_sentence
+      redirect_to "/shelters/new"
+    else
+      redirect_to '/shelters'
+    end
   end
 
   def show
@@ -40,7 +45,12 @@ class SheltersController < ApplicationController
       })
 
       shelter.save
-      redirect_to "/shelters/#{shelter.id}"
+      if shelter.save
+        redirect_to "/shelters/#{shelter.id}"
+      else
+        flash[:notice] = shelter.errors.full_messages.to_sentence
+        redirect_to "/shelters/#{shelter.id}/edit"
+      end
   end
 
   def destroy

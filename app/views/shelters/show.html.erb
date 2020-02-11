@@ -8,10 +8,11 @@
 
 <%=link_to "Update Shelter", "/shelters/#{@shelter.id}/edit"%>
 <%=link_to "Pets", "/shelters/#{@shelter.id}/pets"%>
-
+<% if @shelter.pets.with_approved_apps.empty? %>
 <%=form_tag "/shelters/#{@shelter.id}", method: :delete do%>
   <%=submit_tag(value="Delete")%>
 <%end%>
+<% end %>
 <br>
 <br>
 
