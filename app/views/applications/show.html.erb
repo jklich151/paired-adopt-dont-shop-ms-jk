@@ -13,6 +13,10 @@
 <% @application.pets.each do |pet| %>
 <section id="application-<%= pet.id%>">
   <%= pet.name %><br>
-  <%= link_to "Approve Application", "/pets/#{pet.id}/applications/#{@application.id}", method: :patch %>
+  <% if @application.pets.with_approved_apps.include?(pet) %>
+    <%= link_to "Remove Application", "/pets/#{pet.id}/applications/#{@application.id}", method: :patch %>
+  <% else %>
+    <%= link_to "Approve Application", "/pets/#{pet.id}/applications/#{@application.id}", method: :patch %>
+  <% end %>
 </section>
 <% end %>

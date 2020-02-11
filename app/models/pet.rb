@@ -7,4 +7,8 @@ class Pet < ApplicationRecord
   def self.with_applications
     Pet.joins(:application_pets)
   end
+
+  def self.with_approved_apps
+    Pet.where("status = 'pending'")
+  end
 end

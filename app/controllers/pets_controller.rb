@@ -32,7 +32,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     if !@pet.applications.empty?
-    @app = @pet.applications.first
+      @app = @pet.applications.first
     end
   end
 
@@ -42,8 +42,14 @@ class PetsController < ApplicationController
 
   def update_status
     @pet = Pet.find(params[:pet_id])
-    @pet.update_attribute(:status, "pending")
-    redirect_to "/pets/#{@pet.id}"
+    if @pet.status == "adoptable"
+      @pet.update_attribute(:status, "pending")
+      redirect_to "/pets/#{@pet.id}"
+    else
+      @pet.update_attribute(:status, "adoptable")
+      app = Application.find(params[:applications_id])
+      redirect_to "/applications/#{app.id}"
+    end
   end
 
   def update
