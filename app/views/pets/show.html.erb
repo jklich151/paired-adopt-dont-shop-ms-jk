@@ -8,15 +8,19 @@
 <p>Status: <%=@pet.status%></p>
 
 <%=link_to "Update Pet", "/pets/#{@pet.id}/edit"%><br>
+
 <% if !favorite.include_pet?(@pet.id.to_s) %>
   <%= button_to "Add To Favorites", "/favorites/#{@pet.id}", method: :patch%><br>
 <% else %>
   <%=button_to "Remove From Favorites", "/favorites/#{@pet.id}", method: :delete %>
 <% end %>
 
-<%= form_tag "/pets/#{@pet.id}", method: :delete do %>
-  <%= submit_tag(value="Delete Pet") %>
+<% if @pet.status == "adoptable" %>
+  <%= form_tag "/pets/#{@pet.id}", method: :delete do %>
+    <%= submit_tag(value="Delete Pet") %>
+  <% end %>
 <% end %>
+
 <% if @pet.status == "pending" && @app != nil %>
   <p> On hold for <%= @app.name %></p>
   <% end %>

@@ -20,8 +20,10 @@
       <p>Age: <%=pet.age%></p>
       <p>Sex: <%=pet.sex%></p>
       <h5><%= link_to "Update Pet", "/pets/#{pet.id}/edit"%></h5>
-      <%= form_tag "/pets/#{pet.id}", method: :delete do %>
-        <%= submit_tag(value="Delete Pet") %>
+      <% if pet.status == "adoptable" %>
+        <%= form_tag "/pets/#{pet.id}", method: :delete do %>
+          <%= submit_tag(value="Delete Pet") %>
+        <% end %>
       <% end %>
       <br>
       <br>
