@@ -17,3 +17,7 @@
 <%= form_tag "/pets/#{@pet.id}", method: :delete do %>
   <%= submit_tag(value="Delete Pet") %>
 <% end %>
+<% if @pet.status == "pending" && @app != nil %>
+  <p> On hold for <%= @app.name %></p>
+  <% end %>
+<%= link_to "All Applications", "/pets/#{@pet.id}/applications" %>

@@ -11,5 +11,8 @@
 
 <h1>Pets: </h1>
 <% @application.pets.each do |pet| %>
+<section id="application-<%= pet.id%>">
   <%= pet.name %><br>
+  <%= link_to "Approve Application", "/pets/#{pet.id}/applications/#{@application.id}", method: :patch %>
+</section>
 <% end %>

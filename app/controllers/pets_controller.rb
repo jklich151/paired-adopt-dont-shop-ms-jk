@@ -31,10 +31,19 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    if !@pet.applications.empty?
+    @app = @pet.applications.first
+    end
   end
 
   def edit
     @pet = Pet.find(params[:id])
+  end
+
+  def update_status
+    @pet = Pet.find(params[:pet_id])
+    @pet.update_attribute(:status, "pending")
+    redirect_to "/pets/#{@pet.id}"
   end
 
   def update
