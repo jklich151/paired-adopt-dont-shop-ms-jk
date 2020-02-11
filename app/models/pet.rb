@@ -11,4 +11,8 @@ class Pet < ApplicationRecord
   def self.with_approved_apps
     Pet.where("status = 'pending'")
   end
+
+  def self.app_count
+    Pet.with_applications.count
+  end
 end

@@ -16,6 +16,11 @@
 <br>
 <br>
 
+<h2>Shelter Statistics</h2>
+<p>Total Pets: <%= @shelter.pet_count %></p>
+<p>Average Rating: <%= @shelter.reviews.average_rating %></p>
+<p>Number of Pet Applications: <%= @shelter.pets.app_count %></p>
+
 <h2>Reviews</h2>
 <% @shelter.reviews.each do |review| %>
   <section id="review-<%=review.id%>">
