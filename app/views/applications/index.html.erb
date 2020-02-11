@@ -1,0 +1,10 @@
+<%= @pet.name %><br>
+<%= image_tag("#{@pet.image}") %><br>
+<h3> Applicants </h3><br>
+<% if @apps.empty? %>
+  <p> There are no applications for this pet.</p>
+<% else %>
+  <% @apps.each do |app| %>
+    <%= link_to "#{app.name}", "/applications/#{app.id}" %>
+  <% end %>
+<% end %>
