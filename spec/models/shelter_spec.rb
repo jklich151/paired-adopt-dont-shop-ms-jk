@@ -14,7 +14,27 @@ RSpec.describe Shelter, type: :model do
     it {should have_many :reviews}
   end
 
-  # describe "methods" do
-  #   it
-  # end
+  describe "#pet_count" do
+    it "return count of shelters pets" do
+      shelter_1 = Shelter.create!(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+      pet_1 = shelter_1.pets.create!(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Ozzie",
+                        age: "6",
+                        sex: "Male",
+                        description: "Very cuddly",
+                        status: "adoptable")
+      pet_2 = shelter_1.pets.create!(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Harley",
+                        age: "2",
+                        sex: "Male",
+                        description: "Playful",
+                        status: "adoptable")
+
+      expect(shelter_1.pet_count).to eq(2)
+    end
+  end
 end

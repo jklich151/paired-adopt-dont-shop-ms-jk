@@ -87,7 +87,7 @@ RSpec.describe "pets index page", method: :feature do
                         age: "6",
                         sex: "Male",
                         description: "Good boy",
-                        status: "pending")
+                        status: "adoptable")
       pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
                         name: "Harley",
                         age: "2",
@@ -138,6 +138,32 @@ RSpec.describe "pets index page", method: :feature do
         click_link "#{shelter_1.name}"
       end
       expect(current_path).to eq("/shelters/#{shelter_1.id}")
+    end
+  end
+
+  it "can't delet a pet with an approved application" do
+    shelter_1 = Shelter.create(name: "Mike's Shelter",
+                               address: '1331 17th Street',
+                               city: 'Denver',
+                               state: 'CO',
+                               zip: '80202')
+    pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                     name: "Ozzie",
+                     age: "6",
+                     sex: "Male",
+                     description: "Good boy",
+                     status: "pending")
+    pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                     name: "Harley",
+                     age: "2",
+                     sex: "Female",
+                     description: "puppy",
+                     status: "adoptable")
+
+    visit "/pets"
+
+    within "#pet-#{pet_1.id}" do
+      expect(page).to_not have_button("Delete Pet")
     end
   end
 end

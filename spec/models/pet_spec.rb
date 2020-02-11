@@ -85,4 +85,46 @@ RSpec.describe Pet, type: :model do
       expect(pets.with_approved_apps).to eq([pet_2])
     end
   end
+
+  describe "#app_count" do
+    it "can return total number of applications" do
+      shelter_1 = Shelter.create!(name: "Meg's Shelter",
+                                 address: '150 Main Street',
+                                 city: 'Hershey',
+                                 state: 'PA',
+                                 zip: '17033')
+      pet_1 = shelter_1.pets.create!(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Ozzie",
+                        age: "6",
+                        sex: "Male",
+                        description: "Very cuddly",
+                        status: "adoptable")
+      pet_2 = shelter_1.pets.create!(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                        name: "Harley",
+                        age: "2",
+                        sex: "Male",
+                        description: "Playful",
+                        status: "adoptable")
+      app_1 = Application.create(name: "Meg",
+                              address: "1234 Turing Lane",
+                              city: "Denver",
+                              state: "CO",
+                              zip: "80202",
+                              phone_number: "7204706332",
+                              description: "I want this dog")
+      app_2 = Application.create(name: "Mike",
+                              address: "1234 Turing Lane",
+                              city: "Denver",
+                              state: "CO",
+                              zip: "80202",
+                              phone_number: "7204706332",
+                              description: "I want this dog")
+      app_pet_1 = pet_1.application_pets.create!(application: app_1, pet: pet_1)
+      app_pet_2 = pet_2.application_pets.create!(application: app_2, pet: pet_2)
+
+      pets = shelter_1.pets
+
+      expect(pets.app_count).to eq(2)
+    end
+  end
 end

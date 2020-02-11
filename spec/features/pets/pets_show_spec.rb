@@ -176,4 +176,60 @@ RSpec.describe "shelters show page", type: :feature do
 
     expect(current_path).to eq("/applications/#{app_1.id}")
   end
+
+  it "can't delete a pet with an approved application" do
+    shelter_1 = Shelter.create(name: "Mike's Shelter",
+                               address: '1331 17th Street',
+                               city: 'Denver',
+                               state: 'CO',
+                               zip: '80202')
+    pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                     name: "Ozzie",
+                     age: "6",
+                     sex: "Male",
+                     description: "Good boy",
+                     status: "pending")
+    pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                     name: "Harley",
+                     age: "2",
+                     sex: "Female",
+                     description: "puppy",
+                     status: "adoptable")
+
+    visit "/pets/#{pet_1.id}"
+
+    expect(page).to_not have_button("Delete Pet")
+  end
+
+  it "is removed from favorites if deleted" do
+    shelter_1 = Shelter.create(name: "Mike's Shelter",
+                               address: '1331 17th Street',
+                               city: 'Denver',
+                               state: 'CO',
+                               zip: '80202')
+    pet_1 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                     name: "Ozzie",
+                     age: "6",
+                     sex: "Male",
+                     description: "Good boy",
+                     status: "adoptable")
+    pet_2 = shelter_1.pets.create(image: "https://image.shutterstock.com/image-photo/happy-golden-retriever-dog-sitting-600w-1518698711.jpg",
+                     name: "Harley",
+                     age: "2",
+                     sex: "Male",
+                     description: "Good boy",
+                     status: "adoptable")
+
+    visit "/pets/#{pet_1.id}"
+    click_on "Add To Favorites"
+
+    visit "/pets"
+
+    within "#pet-#{pet_1.id}" do
+      click_on "Delete Pet"
+    end
+
+    visit "/favorites"
+    expect(page).to_not have_content(pet_1.name)
+  end
 end
