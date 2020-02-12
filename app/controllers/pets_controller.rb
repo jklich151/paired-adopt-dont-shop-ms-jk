@@ -45,14 +45,14 @@ class PetsController < ApplicationController
   end
 
   def update_status
+    @app = Application.find(params[:applications_id])
     @pet = Pet.find(params[:pet_id])
     if @pet.status == "adoptable"
       @pet.update_attribute(:status, "pending")
       redirect_to "/pets/#{@pet.id}"
     else
       @pet.update_attribute(:status, "adoptable")
-      app = Application.find(params[:applications_id])
-      redirect_to "/applications/#{app.id}"
+      redirect_to "/applications/#{@app.id}"
     end
   end
 
