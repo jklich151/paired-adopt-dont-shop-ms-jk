@@ -12,7 +12,7 @@
 <h1>Pets: </h1>
 <% @application.pets.each do |pet| %>
 <section id="application-<%= pet.id%>">
-  <%= pet.name %><br>
+  <%= link_to "#{pet.name}", "/pets/#{pet.id}" %><br>
   <% if @application.pets.with_approved_apps.include?(pet) %>
     <%= link_to "Remove Application", "/pets/#{pet.id}/applications/#{@application.id}", method: :patch %>
   <% else %>
