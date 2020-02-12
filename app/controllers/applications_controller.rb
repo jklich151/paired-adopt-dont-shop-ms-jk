@@ -13,8 +13,9 @@ class ApplicationsController < ApplicationController
       redirect_to "/applications/new"
     else
       pets = Pet.find(params[:adopt_pets])
-      pets.each do |pet|
-        ApplicationPet.create(application: application, pet: pet)
+      application.pets << pets
+
+      application.pets.each do |pet|
         session[:favorites].delete(pet.id)
       end
       flash[:notice] = "Your application has been submitted!"

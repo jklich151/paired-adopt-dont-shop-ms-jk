@@ -78,6 +78,8 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    apps = ApplicationPet.where(pet_id: params[:id])
+    ApplicationPet.destroy(apps.ids)
     pet = Pet.destroy(params[:id])
 
     if session[:favorites] != nil && session[:favorites].include?(pet.id)
