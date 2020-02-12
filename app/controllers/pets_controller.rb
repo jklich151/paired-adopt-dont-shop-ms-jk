@@ -25,8 +25,12 @@ class PetsController < ApplicationController
       })
 
     pet.save
-
-    redirect_to "/shelters/#{pet.shelter_id}/pets"
+    if !pet.save
+      flash[:notice] = pet.errors.full_messages.to_sentence
+      redirect_to "/shelters/#{pet.shelter_id}/pets/new"
+    else
+      redirect_to "/shelters/#{pet.shelter_id}/pets"
+    end
   end
 
   def show
@@ -65,7 +69,12 @@ class PetsController < ApplicationController
       })
 
       pet.save
-      redirect_to "/pets/#{pet.id}"
+      if !pet.save
+        flash[:notice] = pet.errors.full_messages.to_sentence
+        redirect_to "/pets/#{pet.id}/edit"
+      else
+        redirect_to "/pets/#{pet.id}"
+      end
   end
 
   def destroy

@@ -1,6 +1,6 @@
-<%= @pet.name %><br>
+<h2><%= link_to "#{@pet.name}", "/pets/#{@pet.id}" %></h2><br>
 <%= image_tag("#{@pet.image}") %><br>
-<h3> Applicants </h3><br>
+<h3> Applicants: </h3><br>
 <% if @apps.empty? %>
   <p> There are no applications for this pet.</p>
 <% else %>
