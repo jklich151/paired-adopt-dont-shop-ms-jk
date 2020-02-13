@@ -1,7 +1,9 @@
 class ApplicationsController < ApplicationController
 
   def new
-    @pets = Pet.find(session[:favorites])
+    if !session[:favorites].empty?
+      @pets = Pet.find(session[:favorites])
+    end
   end
 
   def create

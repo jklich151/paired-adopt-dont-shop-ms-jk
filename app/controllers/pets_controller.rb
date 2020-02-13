@@ -88,9 +88,4 @@ class PetsController < ApplicationController
 
     redirect_to '/pets'
   end
-
-  private
-    def pet_params
-      params.permit(:shelter_id, :status)
-    end
 end

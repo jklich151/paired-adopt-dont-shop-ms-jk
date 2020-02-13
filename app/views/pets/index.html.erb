@@ -9,9 +9,6 @@
   <section id="pet-<%=pet.id%>">
     <div style="float:left">
       <%= image_tag("#{pet.image}", size: "300")%>
-      <% if @shelter %>
-       <h3><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new"%></h3>
-      <%end%>
     </div>
 
     <div style="float:right">
@@ -29,4 +26,8 @@
       <br>
     </div>
   </section>
+<% end %>
+
+<% if @shelter %>
+<h3><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new"%></h3>
 <% end %>
