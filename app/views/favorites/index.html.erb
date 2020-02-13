@@ -1,5 +1,5 @@
 <% if @pets == nil %>
-  <p> "You have no pets in your favorites." </p>
+  <p> You have no pets in your favorites. </p>
 <% else %>
   <% favorite.pets.each do |pet| %>
   <section id= "pet-<%= pet.id %>">
@@ -10,8 +10,11 @@
     <% end %>
 <% end %>
 
-<%= link_to "Remove all Favorites", "/favorites", method: :delete %>
-<%= link_to "Adopt Pets", "/applications/new" %>
+<% if @pets != nil %>
+ <%= link_to "Remove all Favorites", "/favorites", method: :delete %>
+ <%= link_to "Adopt Pets", "/applications/new" %>
+<% end %>
+
 
 <br>
 <br>
