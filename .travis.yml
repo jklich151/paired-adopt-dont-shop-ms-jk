@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 2.5.3
+# addons:
+#   postgresql: 9.6
+#   chrome: stable
+# before_install:
+# - yes | gem update --system --force
+# - gem install bundler
+# script:
+# - yarn
+# - bundle exec rails db:{create,migrate} RAILS_ENV=test
+# - bundle exec rspec
